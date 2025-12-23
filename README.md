@@ -1,17 +1,40 @@
- 깃허브 업로드 및 게시 방법 (최종 확인)
-네, 이 코드는 깃허브에 그대로 업로드하면 바로 웹사이트로 작동합니다. 다음 단계를 따라주세요.
-이미지 저장: 제공해주신 PDF의 각 페이지를 캡처하여 image1.png부터 image28.png까지 번호 순서대로 저장하세요.
-깃허브 저장소(Repository) 준비:
-깃허브에 접속해 새로운 저장소(예: portfolio)를 만듭니다.
-index.html 파일을 생성하고 위 코드를 붙여넣습니다.
-같은 폴더(루트 경로)에 캡처한 이미지 28개를 모두 업로드합니다.
-웹 페이지 활성화 (GitHub Pages):
-저장소 상단 메뉴의 Settings 클릭.
-왼쪽 사이드바에서 Pages 클릭.
-Branch를 main (또는 master)으로 선택하고 Save 클릭.
-확인: 약 1~2분 뒤 상단에 나타나는 주소(예: https://사용자아이디.github.io/portfolio/)로 접속하면 완성된 포트폴리오를 볼 수 있습니다.
-🎨 이 코드의 특징
-MWS 스타일 극대화: 배경의 거대한 타이포그래피와 미니멀한 라인을 통해 디자인 스튜디오가 제작한 듯한 느낌을 줍니다.
-스토리텔링: PDF의 순서 그대로 이미지가 배치되어, 방문자가 스크롤만 내려도 정석우 님의 10년 경력을 한눈에 읽을 수 있습니다.
-인터랙션: 이미지에 마우스를 올리면 흑백에서 컬러로 선명해지는 효과를 넣어 보는 재미를 더했습니다.
-이제 이미지 28개만 준비해서 올리시면 완벽한 웹 포트폴리오가 완성됩니다! 진행하시다 막히는 부분이 있으면 언제든 물어보세요.
+# 🕹️ Jeong Seok Woo | Game Business PM Portfolio
+
+> **10년간의 게임 사업 경험을 바탕으로 MMORPG와 Web3 프로젝트를 성공적으로 이끌어온 게임 비즈니스 전문가 정석우입니다.**
+
+Mouthwash Studio(MWS)의 미니멀리즘 디자인 철학을 반영하여, 10년의 경력과 핵심 성과를 데이터 중심으로 시각화한 웹 포트폴리오 저장소입니다.
+
+---
+
+## 🔗 Live Demo
+**[포트폴리오 주소 입력: https://your-id.github.io/repository-name/]**
+*(여기에 실제 깃허브 페이지 주소를 적어주세요)*
+
+---
+
+## 🚀 Key Achievements
+- **ROM: Remember of Majesty**: 글로벌 통합 빌드 론칭 (MCU 16만, 연 매출 600억 달성)
+- **ROM: Golden Age**: Web3/블록체인 온보딩 및 토크노믹스 설계 (사전예약 500만 확보)
+- **Global Publishing**: 한국, 대만 등 다국적 시장 론칭 및 라이브 서비스 운영 전략 수립
+- **Tokenomics Expertise**: 토큰 프리세일 100% 완판 및 인게임 DeFi 구조 설계
+
+## 🛠 Tech & Tools
+- **Framework**: HTML5, Tailwind CSS (Minimal & Responsive Design)
+- **Deployment**: GitHub Pages
+- **PM Tools**: Redmine, JIRA, Google Analytics, App Store Connect, Google Play Console
+
+---
+
+## 📁 Repository Structure
+- `index.html`: 전체 포트폴리오 구조 및 콘텐츠
+- `/image1.png` ~ `/image28.png`: 프로젝트 및 경력 상세 시각화 이미지 자료
+
+---
+
+## ✉️ Contact
+- **Email**: kingkong0227@gmail.com
+- **Phone**: 010-9281-1827
+- **Location**: Seoul, Korea
+
+---
+*© 2025 Jeong Seok Woo. All rights reserved.*
