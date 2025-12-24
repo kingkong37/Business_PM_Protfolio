@@ -7,27 +7,29 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #e5e5e5; word-break: keep-all; scroll-behavior: smooth; }
-        .mws-title { font-size: clamp(3rem, 15vw, 18rem); line-height: 0.75; letter-spacing: -0.08em; font-weight: 900; color: #0f0f0f; }
-        .section-padding { padding: 120px 24px; }
+        /* 배경색을 완전 검정에서 세련된 딥 그레이(#121212)로 변경 */
+        body { font-family: 'Inter', sans-serif; background-color: #121212; color: #eeeeee; word-break: keep-all; scroll-behavior: smooth; }
+        .mws-title { font-size: clamp(3rem, 15vw, 18rem); line-height: 0.75; letter-spacing: -0.08em; font-weight: 900; color: #1a1a1a; }
+        .section-padding { padding: 100px 24px; }
         
-        /* [핵심 수정] 이미지 박스 전체가 팝업되는 효과 */
+        /* 장표 이미지 프레임 및 팝업 효과 */
         .slide-frame { 
-            background-color: #111; 
-            border: 1px solid #1a1a1a; 
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            background-color: #1a1a1a; 
+            border: 1px solid #2a2a2a; 
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
             position: relative;
             z-index: 1;
             transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-            cursor: pointer;
+            cursor: zoom-in;
+            width: 100%;
         }
 
-        /* 마우스 오버 시 박스 자체가 커지고 그림자가 짙어지며 최상단으로 올라옴 */
+        /* 호버 시 확대 및 가독성 강조 */
         .slide-frame:hover { 
-            transform: scale(1.15); /* 박스 전체를 115% 확대 */
-            z-index: 50; /* 주변 요소보다 위로 올라오게 함 */
-            box-shadow: 0 40px 80px rgba(0,0,0,0.9);
+            transform: scale(1.1); /* 너무 과하지 않게 1.1배 확대 */
+            z-index: 50; 
+            box-shadow: 0 40px 100px rgba(0,0,0,1);
             border-color: #444;
         }
 
@@ -36,21 +38,24 @@
             height: auto; 
             display: block;
             image-rendering: -webkit-optimize-contrast;
+            border-radius: 7px;
         }
         
-        .sticky-nav { backdrop-blur: 25px; background-color: rgba(5, 5, 5, 0.8); }
+        /* 상단 바 배경 조정 */
+        .sticky-nav { backdrop-blur: 30px; background-color: rgba(18, 18, 18, 0.8); }
         .nav-link { transition: color 0.3s ease; }
-        .nav-link:hover { color: #ffffff; }
-        .line { height: 1px; background: linear-gradient(90deg, #1a1a1a 0%, #333 50%, #1a1a1a 100%); width: 100%; margin: 60px 0; }
+        .nav-link:hover { color: #ffffff; text-decoration: underline; }
+        
+        .line { height: 1px; background: #2a2a2a; width: 100%; margin: 60px 0; }
         .text-gradient { background: linear-gradient(to bottom, #ffffff 0%, #a1a1aa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 p-6 flex justify-between items-center sticky-nav border-b border-zinc-900">
+    <nav class="fixed top-0 w-full z-50 p-6 flex justify-between items-center sticky-nav border-b border-zinc-800">
         <div class="font-black text-2xl tracking-tighter uppercase text-white">JSW.PM</div>
-        <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.4em] font-black text-zinc-600">
+        <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.4em] font-black text-zinc-500">
             <a href="#about" class="nav-link">Profile</a>
             <a href="#projects" class="nav-link">Work</a>
             <a href="#gamer" class="nav-link">DNA</a>
@@ -60,7 +65,7 @@
 
     <!-- Hero Section -->
     <header class="pt-56 pb-40 px-6 relative overflow-hidden">
-        <div class="absolute -z-10 top-20 left-6 mws-title select-none">PORTFOLIO.</div>
+        <div class="absolute -z-10 top-20 left-6 mws-title select-none opacity-40">PORTFOLIO.</div>
         <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 items-center">
             <div class="md:col-span-7 space-y-8">
                 <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-none text-gradient">
@@ -76,27 +81,35 @@
         </div>
     </header>
 
-    <!-- 01. Profile -->
-    <section id="about" class="section-padding border-t border-zinc-900">
+    <!-- 01. Profile & Professional (이미지 크기 확대) -->
+    <section id="about" class="section-padding border-t border-zinc-800">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-xs uppercase tracking-[0.5em] font-black mb-16 text-zinc-700">01 / The Professional</h2>
-            <div class="grid md:grid-cols-12 gap-12">
-                <div class="md:col-span-4">
-                    <div class="slide-frame mb-8">
-                        <img src="image2.png" alt="Profile" class="slide-img object-contain bg-zinc-900">
+            <h2 class="text-xs uppercase tracking-[0.5em] font-black mb-16 text-zinc-600 uppercase">01 / The Professional</h2>
+            <div class="space-y-16">
+                <!-- 프로필 장표: 내용을 읽어야 하므로 1단으로 크게 배치 -->
+                <div class="grid md:grid-cols-12 gap-12 items-start">
+                    <div class="md:col-span-8 slide-frame">
+                        <img src="image2.png" alt="Profile Slide" class="slide-img">
                     </div>
-                    <div class="space-y-4 text-xs font-bold tracking-[0.1em]">
-                        <div class="flex justify-between border-b border-zinc-900 pb-3">
-                            <span class="text-zinc-600 uppercase">Email</span>
-                            <span class="text-zinc-300">kingkong0227@gmail.com</span>
+                    <div class="md:col-span-4 space-y-6 pt-4">
+                        <div class="border-l-4 border-white pl-6">
+                            <h3 class="text-3xl font-black tracking-tighter mb-2">JEONG SEOK WOO</h3>
+                            <p class="text-zinc-500 font-bold uppercase text-xs tracking-widest">Global Business Expert</p>
                         </div>
-                        <div class="flex justify-between border-b border-zinc-900 pb-3">
-                            <span class="text-zinc-600 uppercase">Location</span>
-                            <span class="text-zinc-300">Seoul, Korea</span>
+                        <div class="space-y-4 text-xs font-bold tracking-[0.1em] pt-6">
+                            <p class="flex justify-between border-b border-zinc-800 pb-3">
+                                <span class="text-zinc-600">Email</span>
+                                <span class="text-zinc-300">kingkong0227@gmail.com</span>
+                            </p>
+                            <p class="flex justify-between border-b border-zinc-800 pb-3">
+                                <span class="text-zinc-600">Location</span>
+                                <span class="text-zinc-300">Seoul, Korea</span>
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="md:col-span-8 space-y-12">
+                <!-- 타임라인 & 역량 장표 -->
+                <div class="grid md:grid-cols-2 gap-12">
                     <div class="slide-frame"><img src="image3.png" alt="Timeline" class="slide-img"></div>
                     <div class="slide-frame"><img src="image4.png" alt="Capability" class="slide-img"></div>
                 </div>
@@ -105,15 +118,13 @@
     </section>
 
     <!-- 02. Main Projects -->
-    <section id="projects" class="section-padding border-t border-zinc-900 bg-zinc-950/50">
+    <section id="projects" class="section-padding border-t border-zinc-800 bg-zinc-900/30">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-xs uppercase tracking-[0.5em] font-black mb-16 text-zinc-700">02 / Selected Works</h2>
+            <h2 class="text-xs uppercase tracking-[0.5em] font-black mb-16 text-zinc-700 uppercase">02 / Selected Projects</h2>
             
             <!-- ROM: Remember of Majesty -->
             <div class="mb-40">
-                <div class="flex items-baseline space-x-4 mb-12">
-                    <h3 class="text-5xl md:text-7xl font-black tracking-tighter text-white italic">ROM: Remember of Majesty.</h3>
-                </div>
+                <h3 class="text-5xl md:text-7xl font-black tracking-tighter text-white mb-12 italic">ROM: Remember of Majesty.</h3>
                 <div class="space-y-12">
                     <div class="slide-frame"><img src="image5.png" class="slide-img"></div>
                     <div class="grid md:grid-cols-2 gap-12">
@@ -127,48 +138,48 @@
             <div class="line"></div>
 
             <!-- ROM: Golden Age -->
-            <div class="pt-20">
-                <div class="flex items-baseline space-x-4 mb-12">
-                    <h3 class="text-5xl md:text-7xl font-black tracking-tighter text-white italic">ROM: Golden Age.</h3>
-                </div>
+            <div class="pt-10">
+                <h3 class="text-5xl md:text-7xl font-black tracking-tighter text-white mb-12 italic">ROM: Golden Age.</h3>
                 <div class="space-y-12">
                     <div class="slide-frame"><img src="image9.png" class="slide-img"></div>
-                    <div class="grid md:grid-cols-3 gap-8">
+                    <div class="grid md:grid-cols-2 gap-12"> <!-- 3열에서 2열로 키움 -->
                         <div class="slide-frame"><img src="image10.png" class="slide-img"></div>
                         <div class="slide-frame"><img src="image11.png" class="slide-img"></div>
-                        <div class="slide-frame"><img src="image12.png" class="slide-img"></div>
                     </div>
+                    <div class="slide-frame"><img src="image12.png" class="slide-img"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 03. Other Projects -->
-    <section class="section-padding border-t border-zinc-900">
+    <section class="section-padding border-t border-zinc-800">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-xs uppercase tracking-[0.5em] font-black mb-24 text-zinc-700 text-center uppercase tracking-widest">Project Insights</h2>
+            <h2 class="text-xs uppercase tracking-[0.5em] font-black mb-24 text-zinc-700 text-center uppercase tracking-widest">Operations & Deep-dives</h2>
             
             <div class="space-y-40">
                 <div class="space-y-10">
-                    <h4 class="text-2xl font-black tracking-[0.3em] text-zinc-500 uppercase border-l-2 border-zinc-800 pl-6">Project Alche</h4>
+                    <h4 class="text-2xl font-black tracking-[0.3em] text-zinc-600 uppercase">Project Alche</h4>
+                    <div class="slide-frame"><img src="image13.png" class="slide-img"></div>
                     <div class="grid md:grid-cols-2 gap-10">
-                        <div class="slide-frame"><img src="image13.png" class="slide-img"></div>
                         <div class="slide-frame"><img src="image14.png" class="slide-img"></div>
+                        <div class="slide-frame"><img src="image15.png" class="slide-img"></div>
                     </div>
-                    <div class="slide-frame"><img src="image15.png" class="slide-img"></div>
                 </div>
 
                 <div class="space-y-10">
-                    <h4 class="text-2xl font-black tracking-[0.3em] text-zinc-500 uppercase border-l-2 border-zinc-800 pl-6">Arcana Tactics</h4>
+                    <h4 class="text-2xl font-black tracking-[0.3em] text-zinc-600 uppercase">Arcana Tactics</h4>
                     <div class="slide-frame"><img src="image16.png" class="slide-img"></div>
                     <div class="slide-frame"><img src="image17.png" class="slide-img"></div>
                 </div>
 
                 <div class="space-y-10">
-                    <h4 class="text-2xl font-black tracking-[0.3em] text-zinc-500 uppercase border-l-2 border-zinc-800 pl-6">Project H.O.A</h4>
-                    <div class="grid md:grid-cols-2 gap-10">
+                    <h4 class="text-2xl font-black tracking-[0.3em] text-zinc-600 uppercase text-right">Project H.O.A & Others</h4>
+                    <div class="grid md:grid-cols-1 gap-12">
                         <div class="slide-frame"><img src="image18.png" class="slide-img"></div>
                         <div class="slide-frame"><img src="image19.png" class="slide-img"></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-12">
                         <div class="slide-frame"><img src="image20.png" class="slide-img"></div>
                         <div class="slide-frame"><img src="image21.png" class="slide-img"></div>
                     </div>
@@ -177,11 +188,11 @@
         </div>
     </section>
 
-    <!-- 04. Gamer DNA -->
-    <section id="gamer" class="section-padding bg-black border-t border-zinc-900">
+    <!-- 04. Gamer DNA (이미지를 가장 크게 보여줄 수 있도록 2열 배치) -->
+    <section id="gamer" class="section-padding bg-black border-t border-zinc-800">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-xs uppercase tracking-[0.5em] font-black mb-20 text-zinc-800 text-center">Gamer Insight DNA</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <h2 class="text-xs uppercase tracking-[0.5em] font-black mb-24 text-zinc-800 text-center uppercase">Gamer Insight Appendix</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12"> <!-- 기존 4열에서 2열로 변경하여 사이즈 대폭 확대 -->
                 <div class="slide-frame"><img src="image22.png" class="slide-img"></div>
                 <div class="slide-frame"><img src="image23.png" class="slide-img"></div>
                 <div class="slide-frame"><img src="image24.png" class="slide-img"></div>
@@ -194,22 +205,22 @@
     </section>
 
     <!-- 05. Footer -->
-    <footer id="contact" class="px-6 py-48 border-t border-zinc-900 text-center relative">
-        <div class="absolute bottom-10 left-6 mws-title opacity-5 select-none uppercase">JSW.S</div>
+    <footer id="contact" class="px-6 py-48 border-t border-zinc-800 text-center relative">
+        <div class="absolute bottom-10 left-6 mws-title opacity-10 select-none uppercase tracking-tighter">JSW.S</div>
         <div class="max-w-4xl mx-auto space-y-12">
-            <h2 class="text-sm font-black uppercase tracking-[0.4em] text-zinc-700">Contact for Excellence</h2>
+            <h2 class="text-sm font-black uppercase tracking-[0.4em] text-zinc-700 uppercase">Contact</h2>
             <a href="mailto:kingkong0227@gmail.com" class="text-4xl md:text-7xl font-black tracking-tighter text-white hover:text-zinc-500 transition-colors duration-500 break-all">
                 kingkong0227@gmail.com
             </a>
-            <div class="text-2xl font-light text-zinc-600">010-9281-1827</div>
+            <div class="text-2xl font-light text-zinc-500">010-9281-1827</div>
         </div>
         
-        <div class="mt-48 pt-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-[10px] font-black uppercase tracking-[0.3em] text-zinc-800">
+        <div class="mt-48 pt-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-[10px] font-black uppercase tracking-[0.3em] text-zinc-700">
             <p>©2025 JEONG SEOK WOO. ALL RIGHTS RESERVED.</p>
-            <div class="flex space-x-10 mt-6 md:mt-0 italic text-zinc-600">
-                <span>Business Planning</span>
-                <span>Web3 Expert</span>
-                <span>Global Ops</span>
+            <div class="flex space-x-10 mt-6 md:mt-0 italic">
+                <span>Game Business PM</span>
+                <span>/</span>
+                <span>Web3 Strategist</span>
             </div>
         </div>
     </footer>
