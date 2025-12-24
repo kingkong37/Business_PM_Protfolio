@@ -11,34 +11,37 @@
         .mws-title { font-size: clamp(3rem, 15vw, 18rem); line-height: 0.75; letter-spacing: -0.08em; font-weight: 900; color: #0f0f0f; }
         .section-padding { padding: 120px 24px; }
         
-        /* 장표 이미지 프레임 및 확대 효과 */
+        /* [핵심 수정] 이미지 박스 전체가 팝업되는 효과 */
         .slide-frame { 
             background-color: #111; 
             border: 1px solid #1a1a1a; 
             border-radius: 4px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            overflow: hidden; /* 내부 확대 시 이미지가 밖으로 나가지 않게 함 */
             position: relative;
-            cursor: zoom-in;
+            z-index: 1;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            cursor: pointer;
         }
+
+        /* 마우스 오버 시 박스 자체가 커지고 그림자가 짙어지며 최상단으로 올라옴 */
+        .slide-frame:hover { 
+            transform: scale(1.15); /* 박스 전체를 115% 확대 */
+            z-index: 50; /* 주변 요소보다 위로 올라오게 함 */
+            box-shadow: 0 40px 80px rgba(0,0,0,0.9);
+            border-color: #444;
+        }
+
         .slide-img { 
             width: 100%; 
             height: auto; 
             display: block;
-            transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-            image-rendering: -webkit-optimize-contrast; /* 텍스트 깨짐 방지 보정 */
-        }
-        /* 마우스 오버 시 120% 확대 */
-        .slide-frame:hover .slide-img { 
-            transform: scale(1.2); 
+            image-rendering: -webkit-optimize-contrast;
         }
         
         .sticky-nav { backdrop-blur: 25px; background-color: rgba(5, 5, 5, 0.8); }
         .nav-link { transition: color 0.3s ease; }
         .nav-link:hover { color: #ffffff; }
         .line { height: 1px; background: linear-gradient(90deg, #1a1a1a 0%, #333 50%, #1a1a1a 100%); width: 100%; margin: 60px 0; }
-        
-        /* 텍스트 가독성 강화 */
         .text-gradient { background: linear-gradient(to bottom, #ffffff 0%, #a1a1aa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
@@ -110,7 +113,6 @@
             <div class="mb-40">
                 <div class="flex items-baseline space-x-4 mb-12">
                     <h3 class="text-5xl md:text-7xl font-black tracking-tighter text-white italic">ROM: Remember of Majesty.</h3>
-                    <span class="text-zinc-700 font-bold uppercase tracking-widest text-xs">Flagship</span>
                 </div>
                 <div class="space-y-12">
                     <div class="slide-frame"><img src="image5.png" class="slide-img"></div>
@@ -128,7 +130,6 @@
             <div class="pt-20">
                 <div class="flex items-baseline space-x-4 mb-12">
                     <h3 class="text-5xl md:text-7xl font-black tracking-tighter text-white italic">ROM: Golden Age.</h3>
-                    <span class="text-zinc-700 font-bold uppercase tracking-widest text-xs">Web3</span>
                 </div>
                 <div class="space-y-12">
                     <div class="slide-frame"><img src="image9.png" class="slide-img"></div>
@@ -145,10 +146,9 @@
     <!-- 03. Other Projects -->
     <section class="section-padding border-t border-zinc-900">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-xs uppercase tracking-[0.5em] font-black mb-24 text-zinc-700 text-center">Development & Operations</h2>
+            <h2 class="text-xs uppercase tracking-[0.5em] font-black mb-24 text-zinc-700 text-center uppercase tracking-widest">Project Insights</h2>
             
             <div class="space-y-40">
-                <!-- Project Alche -->
                 <div class="space-y-10">
                     <h4 class="text-2xl font-black tracking-[0.3em] text-zinc-500 uppercase border-l-2 border-zinc-800 pl-6">Project Alche</h4>
                     <div class="grid md:grid-cols-2 gap-10">
@@ -158,18 +158,14 @@
                     <div class="slide-frame"><img src="image15.png" class="slide-img"></div>
                 </div>
 
-                <!-- Arcana Tactics -->
                 <div class="space-y-10">
                     <h4 class="text-2xl font-black tracking-[0.3em] text-zinc-500 uppercase border-l-2 border-zinc-800 pl-6">Arcana Tactics</h4>
-                    <div class="grid md:grid-cols-1 gap-12">
-                        <div class="slide-frame"><img src="image16.png" class="slide-img"></div>
-                        <div class="slide-frame"><img src="image17.png" class="slide-img"></div>
-                    </div>
+                    <div class="slide-frame"><img src="image16.png" class="slide-img"></div>
+                    <div class="slide-frame"><img src="image17.png" class="slide-img"></div>
                 </div>
 
-                <!-- HOA & Others -->
                 <div class="space-y-10">
-                    <h4 class="text-2xl font-black tracking-[0.3em] text-zinc-500 uppercase border-l-2 border-zinc-800 pl-6">Project H.O.A & Common Operations</h4>
+                    <h4 class="text-2xl font-black tracking-[0.3em] text-zinc-500 uppercase border-l-2 border-zinc-800 pl-6">Project H.O.A</h4>
                     <div class="grid md:grid-cols-2 gap-10">
                         <div class="slide-frame"><img src="image18.png" class="slide-img"></div>
                         <div class="slide-frame"><img src="image19.png" class="slide-img"></div>
@@ -186,13 +182,13 @@
         <div class="max-w-6xl mx-auto">
             <h2 class="text-xs uppercase tracking-[0.5em] font-black mb-20 text-zinc-800 text-center">Gamer Insight DNA</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="slide-frame opacity-40 hover:opacity-100 transition-opacity"><img src="image22.png" class="slide-img"></div>
-                <div class="slide-frame opacity-40 hover:opacity-100 transition-opacity"><img src="image23.png" class="slide-img"></div>
-                <div class="slide-frame opacity-40 hover:opacity-100 transition-opacity"><img src="image24.png" class="slide-img"></div>
-                <div class="slide-frame opacity-40 hover:opacity-100 transition-opacity"><img src="image25.png" class="slide-img"></div>
-                <div class="slide-frame opacity-40 hover:opacity-100 transition-opacity"><img src="image26.png" class="slide-img"></div>
-                <div class="slide-frame opacity-40 hover:opacity-100 transition-opacity"><img src="image27.png" class="slide-img"></div>
-                <div class="md:col-span-2 slide-frame opacity-40 hover:opacity-100 transition-opacity"><img src="image28.png" class="slide-img"></div>
+                <div class="slide-frame"><img src="image22.png" class="slide-img"></div>
+                <div class="slide-frame"><img src="image23.png" class="slide-img"></div>
+                <div class="slide-frame"><img src="image24.png" class="slide-img"></div>
+                <div class="slide-frame"><img src="image25.png" class="slide-img"></div>
+                <div class="slide-frame"><img src="image26.png" class="slide-img"></div>
+                <div class="slide-frame"><img src="image27.png" class="slide-img"></div>
+                <div class="md:col-span-2 slide-frame"><img src="image28.png" class="slide-img"></div>
             </div>
         </div>
     </section>
@@ -210,7 +206,7 @@
         
         <div class="mt-48 pt-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-[10px] font-black uppercase tracking-[0.3em] text-zinc-800">
             <p>©2025 JEONG SEOK WOO. ALL RIGHTS RESERVED.</p>
-            <div class="flex space-x-10 mt-6 md:mt-0 italic">
+            <div class="flex space-x-10 mt-6 md:mt-0 italic text-zinc-600">
                 <span>Business Planning</span>
                 <span>Web3 Expert</span>
                 <span>Global Ops</span>
