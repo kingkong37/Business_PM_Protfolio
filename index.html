@@ -164,15 +164,40 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="px-6 py-40 border-t border-zinc-800 text-center bg-black">
-        <div class="max-w-4xl mx-auto space-y-16">
-            <h2 class="text-xs font-black uppercase tracking-[0.4em] text-zinc-700 uppercase">Contact for Inquiry</h2>
-            <a href="mailto:kingkong0227@gmail.com" class="text-4xl md:text-7xl font-black tracking-tighter text-white hover:text-blue-500 transition-colors duration-500 break-all underline decoration-zinc-800 underline-offset-8">kingkong0227@gmail.com</a>
-            <div class="text-2xl font-light text-zinc-500 tracking-widest">010-9281-1827</div>
+    <footer id="contact" class="px-6 py-48 border-t border-zinc-900 text-center bg-black relative overflow-hidden">
+        <!-- 배경에 은은하게 깔리는 거대 텍스트 (MWS 스타일) -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none select-none">
+            <span class="text-[20vw] font-black tracking-tighter uppercase">Contact</span>
         </div>
-        <div class="mt-48 pt-10 border-t border-zinc-900 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 italic">
-            <p>©2025 JEONG SEOK WOO. ALL RIGHTS RESERVED.</p>
-            <p>DESIGNED FOR STRATEGIC PM EXCELLENCE.</p>
+    
+        <div class="max-w-5xl mx-auto relative z-10">
+            <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-600 mb-12">Available for Opportunities</h2>
+            
+            <div class="space-y-6">
+                <!-- 이메일: 폰트 크기를 최적화(text-2xl ~ text-5xl)하고 자간을 좁혀 고급스럽게 배치 -->
+                <a href="mailto:kingkong0227@gmail.com" 
+                   class="block text-2xl md:text-5xl font-bold tracking-tighter text-white hover:text-zinc-400 transition-all duration-700 ease-in-out break-keep border-b border-zinc-800 pb-2 inline-block">
+                    kingkong0227@gmail.com
+                </a>
+                
+                <!-- 전화번호: 가독성을 위해 폰트 굵기를 낮추고 간격을 벌림 -->
+                <div class="pt-8">
+                    <p class="text-lg md:text-xl font-light text-zinc-500 tracking-[0.2em]">010-9281-1827</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- 하단 카피라이트 영역 -->
+        <div class="mt-48 pt-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-[9px] font-black uppercase tracking-[0.3em] text-zinc-800">
+            <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                <span class="text-zinc-500">©2025 JSW.S</span>
+                <span class="h-[1px] w-8 bg-zinc-800"></span>
+                <span>All Rights Reserved.</span>
+            </div>
+            <div class="flex space-x-8 italic">
+                <span class="hover:text-zinc-400 transition-colors cursor-default">Business Strategy</span>
+                <span class="hover:text-zinc-400 transition-colors cursor-default">Game Business PM</span>
+            </div>
         </div>
     </footer>
 
