@@ -1,180 +1,37 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정석우 | Game Business PM Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background: radial-gradient(circle at 50% 0%, #1e1e1e 0%, #121212 100%); 
-            color: #d1d1d1; 
-            word-break: keep-all; 
-            scroll-behavior: smooth; 
-        }
+<!-- Footer -->
+<footer id="contact" class="px-6 py-48 border-t border-zinc-900 text-center bg-black relative overflow-hidden">
+    <!-- 배경에 은은하게 깔리는 거대 텍스트 (MWS 스타일) -->
+    <div class="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none select-none">
+        <span class="text-[20vw] font-black tracking-tighter uppercase">Contact</span>
+    </div>
+
+    <div class="max-w-5xl mx-auto relative z-10">
+        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-600 mb-12">Available for Opportunities</h2>
         
-        .mws-title { font-size: clamp(3rem, 15vw, 18rem); line-height: 0.75; letter-spacing: -0.08em; font-weight: 900; color: #1a1a1a; }
-        .section-padding { padding: 100px 24px; }
-        
-        /* [핵심: 모든 장표 사이즈 단일화] */
-        .slide-container {
-            max-width: 1024px; /* H.O.A 장표 사이즈와 유사한 대형 규격 */
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .slide-frame { 
-            background-color: #1a1a1a; 
-            padding: 12px;
-            border: 1px solid rgba(255,255,255,0.05); 
-            border-radius: 12px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            position: relative;
-            z-index: 1;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: zoom-in;
-            width: 100%;
-            margin-bottom: 60px; /* 장표 간 간격 */
-        }
-
-        .slide-frame:hover { 
-            transform: scale(1.05); 
-            z-index: 50; 
-            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
-            border-color: rgba(255,255,255,0.2);
-        }
-
-        .slide-img { 
-            width: 100%; 
-            height: auto; 
-            display: block; 
-            border-radius: 6px;
-            image-rendering: -webkit-optimize-contrast;
-        }
-        
-        .sticky-nav { backdrop-blur: 30px; background-color: rgba(18, 18, 18, 0.8); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .nav-link:hover { color: #ffffff; text-decoration: underline; text-underline-offset: 8px; }
-        .line { height: 1px; background: rgba(255,255,255,0.05); width: 100%; margin: 80px 0; }
-        .section-label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5em; color: #444; margin-bottom: 30px; display: block; text-align: center; }
-    </style>
-</head>
-<body class="antialiased">
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 p-6 flex justify-between items-center sticky-nav">
-        <div class="font-black text-2xl tracking-tighter uppercase text-white">JSW.PM</div>
-        <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.4em] font-black text-zinc-500">
-            <a href="#about" class="nav-link">Profile</a>
-            <a href="#projects" class="nav-link">Work</a>
-            <a href="#gamer" class="nav-link">DNA</a>
-            <a href="#contact" class="nav-link text-white">Contact</a>
-        </div>
-    </nav>
-
-    <!-- Hero -->
-    <header class="pt-64 pb-48 px-6 text-center overflow-hidden">
-        <div class="absolute -z-10 top-20 left-0 w-full mws-title select-none opacity-40 uppercase">Expert.</div>
-        <div class="max-w-4xl mx-auto space-y-12">
-            <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-none text-white uppercase italic">Impact &<br>Result.</h1>
-            <p class="text-xl md:text-2xl text-zinc-500 font-light italic">장표로 증명하는 10년의 비즈니스 기록</p>
-        </div>
-    </header>
-
-    <!-- 01. Profile & Basic Data -->
-    <section id="about" class="section-padding border-t border-zinc-900">
-        <div class="slide-container">
-            <span class="section-label">01 / The Professional</span>
-            <div class="slide-frame"><img src="image1.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image2.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image3.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image4.png" class="slide-img"></div>
-        </div>
-    </section>
-
-    <!-- 02. Main Project: ROM -->
-    <section id="projects" class="section-padding border-t border-zinc-900 bg-zinc-900/10">
-        <div class="slide-container">
-            <span class="section-label">02 / Flagship Project</span>
-            <h3 class="text-4xl md:text-6xl font-black text-white italic tracking-tighter uppercase mb-16 text-center">ROM: Remember of Majesty</h3>
-            <div class="slide-frame"><img src="image5.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image6.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image7.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image8.png" class="slide-img"></div>
+        <div class="space-y-6">
+            <!-- 이메일: 폰트 크기를 최적화(text-2xl ~ text-5xl)하고 자간을 좁혀 고급스럽게 배치 -->
+            <a href="mailto:kingkong0227@gmail.com" 
+               class="block text-2xl md:text-5xl font-bold tracking-tighter text-white hover:text-zinc-400 transition-all duration-700 ease-in-out break-keep border-b border-zinc-800 pb-2 inline-block">
+                kingkong0227@gmail.com
+            </a>
             
-            <div class="line"></div>
-            
-            <h3 class="text-4xl md:text-6xl font-black text-white italic tracking-tighter uppercase mb-16 text-center">ROM: Golden Age</h3>
-            <div class="slide-frame"><img src="image9.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image10.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image11.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image12.png" class="slide-img"></div>
+            <!-- 전화번호: 가독성을 위해 폰트 굵기를 낮추고 간격을 벌림 -->
+            <div class="pt-8">
+                <p class="text-lg md:text-xl font-light text-zinc-500 tracking-[0.2em]">010-9281-1827</p>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- 03. Other Projects & Operations -->
-    <section class="section-padding border-t border-zinc-900">
-        <div class="slide-container">
-            <span class="section-label">03 / Sub Projects & Common Work</span>
-            
-            <h4 class="text-3xl font-black italic text-zinc-600 mb-10 tracking-widest uppercase">Project Alche</h4>
-            <div class="slide-frame"><img src="image13.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image14.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image15.png" class="slide-img"></div>
-
-            <div class="line"></div>
-
-            <h4 class="text-3xl font-black italic text-zinc-600 mb-10 tracking-widest uppercase text-right">Arcana Tactics</h4>
-            <div class="slide-frame"><img src="image16.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image17.png" class="slide-img"></div>
-
-            <div class="line"></div>
-
-            <h4 class="text-3xl font-black italic text-zinc-600 mb-10 tracking-widest uppercase">Project H.O.A</h4>
-            <div class="slide-frame"><img src="image18.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image19.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image20.png" class="slide-img"></div>
-
-            <div class="line"></div>
-
-            <h4 class="text-3xl font-black italic text-zinc-600 mb-10 tracking-widest uppercase text-right">Common Work</h4>
-            <div class="slide-frame"><img src="image21.png" class="slide-img"></div>
+    <!-- 하단 카피라이트 영역 -->
+    <div class="mt-48 pt-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-[9px] font-black uppercase tracking-[0.3em] text-zinc-800">
+        <div class="flex items-center space-x-4 mb-4 md:mb-0">
+            <span class="text-zinc-500">©2025 JSW.S</span>
+            <span class="h-[1px] w-8 bg-zinc-800"></span>
+            <span>All Rights Reserved.</span>
         </div>
-    </section>
-
-    <!-- 04. Gamer DNA -->
-    <section id="gamer" class="section-padding bg-zinc-950 border-t border-zinc-800">
-        <div class="slide-container">
-            <span class="section-label">04 / Appendix: Gamer DNA</span>
-            <div class="slide-frame"><img src="image22.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image23.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image24.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image25.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image26.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image27.png" class="slide-img"></div>
-            <div class="slide-frame"><img src="image28.png" class="slide-img"></div>
+        <div class="flex space-x-8 italic">
+            <span class="hover:text-zinc-400 transition-colors cursor-default">Business Strategy</span>
+            <span class="hover:text-zinc-400 transition-colors cursor-default">Game Business PM</span>
         </div>
-    </section>
-
-    <!-- 05. The END -->
-    <section class="py-72 bg-zinc-900/20 flex flex-col items-center justify-center text-center px-6">
-        <h2 class="text-6xl md:text-9xl font-black tracking-tighter text-white uppercase italic leading-none opacity-20 select-none">Finish.</h2>
-        <p class="mt-12 text-zinc-700 font-bold uppercase tracking-[0.6em] text-xs italic">Document Ends Here.</p>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="px-6 py-40 border-t border-zinc-800 text-center bg-black">
-        <div class="max-w-4xl mx-auto space-y-16">
-            <h2 class="text-xs font-black uppercase tracking-[0.4em] text-zinc-700 uppercase">Contact for Inquiry</h2>
-            <a href="mailto:kingkong0227@gmail.com" class="text-4xl md:text-7xl font-black tracking-tighter text-white hover:text-blue-500 transition-colors duration-500 break-all underline decoration-zinc-800 underline-offset-8">kingkong0227@gmail.com</a>
-            <div class="text-2xl font-light text-zinc-500 tracking-widest">010-9281-1827</div>
-        </div>
-        <div class="mt-48 pt-10 border-t border-zinc-900 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 italic">
-            <p>©2025 JEONG SEOK WOO. ALL RIGHTS RESERVED.</p>
-            <p>DESIGNED FOR STRATEGIC PM EXCELLENCE.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+    </div>
+</footer>
